@@ -16,7 +16,7 @@ $(document).ready(function(){
         $('#album_art').attr("src", album_art);
         $('#track').html(track_name);
         $('#artists').html(artist_list);
-        $("#album_art").show();
+        $("#album_art").toggle();
       }
 
     }); 
