@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+      <style>
+        body {
+          margin:0; 
+          overflow: hidden;
+          background-color:#242424;
+          font-family: "Lucida Console", "Courier New", monospace;
+          color: white;
+          font-size:5.9vw;
+        }
+        #content {
+          width: 720px;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        #info {
+          text-align:center;
+        }
+        img {
+          display:block;
+          margin:auto;
+        }
+        p {
+          display:block;
+          margin:auto;
+        }
+        #track {
+          font-weight:bold;
+        }
+      </style>
+  </head>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+  <script src="{{url_for('static', filename='update.js')}}"></script>
+
+  <body>
+  {% block content %}{% endblock %}
+  </body>
+</html>
