@@ -13,7 +13,7 @@ def whats_playing():
 
 @app.route('/update/', methods=['GET'])
 def update():
-  sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=SCOPE))
+  sp = spotipy.Spotify(auth_manager=SpotifyOAuth(open_browser=False,scope=SCOPE))
   current_track = sp.current_user_playing_track()
   if current_track:
     return jsonify(current_track)
@@ -21,4 +21,4 @@ def update():
     return jsonify(None)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0")

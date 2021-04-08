@@ -1,5 +1,8 @@
 $(document).ready(function(){
   $("#album_art").hide();
+  $('#track').hide();
+  $('#artists').hide();
+
   function fetchSpotifyInfo() {
     $.get("/update/",function(res){
       if ($.trim(res)){
@@ -11,16 +14,9 @@ $(document).ready(function(){
           artist_list += item['name'];
         });
         $('#album_art').attr("src", album_art);
-        $("#album_art").show();
         $('#track').html(track_name);
-        $("#track").show();
         $('#artists').html(artist_list);
-        $('#artists').show();
-      }
-      else {
-        $("#album_art").hide();
-        $('#track').hide();
-        $('#artists').hide();
+        $("#album_art").show();
       }
 
     }); 
@@ -28,4 +24,10 @@ $(document).ready(function(){
   var intervalId = window.setInterval(function(){
     fetchSpotifyInfo();
    }, 10000);
+ 
+  $("#info").click(function(){
+        $("#album_art").toggle();
+        $("#track").toggle();
+        $('#artists').toggle();
+  });
 });
