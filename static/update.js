@@ -13,12 +13,12 @@ $(document).ready(function(){
         artists.forEach(function (item, index) {
           artist_list += item['name'];
         });
-
-        if($('#track').html != track_name){
+        var current_track_name = $('#track').text();
+        if(current_track_name != track_name){
           $('#album_art').attr("src", album_art_url);
-          $('#album_art').show();
           $('#track').html(track_name);
           $('#artists').html(artist_list);
+          $('#album_art').show();
 	}
       }
 
