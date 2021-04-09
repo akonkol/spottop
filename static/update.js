@@ -6,17 +6,20 @@ $(document).ready(function(){
   function fetchSpotifyInfo() {
     $.get("/update/",function(res){
       if ($.trim(res)){
-        var album_art = res['item']['album']['images'][0]['url'];
+        var album_art_url = res['item']['album']['images'][0]['url'];
         var track_name = res['item']['name'];
         var artists = res['item']['album']['artists'];
         var artist_list = "";
         artists.forEach(function (item, index) {
           artist_list += item['name'];
         });
-        $('#album_art').attr("src", album_art);
-        $('#track').html(track_name);
-        $('#artists').html(artist_list);
-        $("#album_art").toggle();
+
+        if($('#track').html != track_name){
+          $('#album_art').attr("src", album_art_url);
+          $('#album_art').show();
+          $('#track').html(track_name);
+          $('#artists').html(artist_list);
+	}
       }
 
     }); 
