@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+UNIT=docker-spottop.service
+
 if [[ ${EUID} -eq -0 ]]; then
-  cp ./spottop.service /etc/systemd/system/.
-  systemctl enable spottop
+  cp ./${UNIT} /etc/systemd/system/.
+  systemctl enable ${UNIT}
   systemctl daemon-reload
-  systemctl restart spottop
+  systemctl restart ${UNIT}
 else
   echo "Please run with escalated privs"
 fi
