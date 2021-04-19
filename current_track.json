@@ -1,0 +1,15 @@
+{ 
+  "item": { 
+    "album": { 
+      "artists": [
+        {"name" : "john denver"},
+        {"name" : "iron maiden"}
+      ],
+      "images": [
+        {"url" : "first"},
+        {"url" : "second"}
+       ]
+    },
+    "name": "track name"
+  }
+}
