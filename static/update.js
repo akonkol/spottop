@@ -11,7 +11,7 @@ $(document).ready(function(){
         var artists = res['item']['album']['artists'];
         var artist_list = "";
         artists.forEach(function (item, index) {
-          artist_list += item['name'];
+          artist_list += " " + item['name'];
         });
         var current_track_name = $('#track').text();
         if(current_track_name != track_name){
