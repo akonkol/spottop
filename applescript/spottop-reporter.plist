@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>spottop-reporter</string>
+    <key>ServiceDescription</key>
+    <string>Polls local spotify client and sends data to spottop json-input endpoint</string>
+    <key>ProgramArguments</key>
+    <array>             
+        <string>/usr/local/bin/python3</string>
+        <string>/Users/akonkol/code/spottop/applescript/get_local_spotify_info.py</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StartInterval</key>
+    <integer>10</integer>
+</dict>
+</plist>
