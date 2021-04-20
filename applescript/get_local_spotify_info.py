@@ -14,7 +14,7 @@ def run_applescript():
       return result.stdout
 
 current_track = run_applescript()
-r = requests.post('http://192.168.1.150:8080/json-input', json=json.loads(current_track))
+r = requests.post('http://192.168.1.150/json-input', json=json.loads(current_track))
 if r.status_code != 200:
     print("failed to talk to spotop json-input")
 else:
