@@ -11,7 +11,7 @@ ExecStartPre=-/usr/bin/docker rm spottop
 ExecStart=/usr/bin/docker run --rm --name spottop \
     -p 80:5000 \
     --env-file /home/pi/code/spottop/secrets \
-    akonkol/spottop:1.1
+    spottop:3.0
 
 [Install]
 WantedBy=default.target
