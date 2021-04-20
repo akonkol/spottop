@@ -10,7 +10,7 @@ ExecStartPre=-/usr/bin/docker stop spottop
 ExecStartPre=-/usr/bin/docker rm spottop
 ExecStart=/usr/bin/docker run --rm --name spottop \
     -p 80:5000 \
-    --env-file ${HOME}/code/spottop/secrets \
+    --env-file /home/pi/code/spottop/secrets \
     akonkol/spottop:1.1
 
 [Install]
